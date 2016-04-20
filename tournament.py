@@ -13,9 +13,8 @@ def connect():
 
 def deleteMatches():
     """Remove all the match records from the database."""
-db = connect();
+db = connect()
 cursor = db.cursor()
-# query = "TRUNCATE ONLY match RESTART IDENTITY;"
 query = "DELETE FROM match;"
 cursor.execute(query);
 db.commit()
@@ -23,7 +22,12 @@ db.close()
 
 def deletePlayers():
     """Remove all the player records from the database."""
-
+db = connect()
+cursor = db.cursor()
+query = "TRUNCATE player RESTART IDENTITY CASCADE;"
+cursor.execute(query);
+db.commit()
+db.close()
 
 def countPlayers():
     """Returns the number of players currently registered."""
