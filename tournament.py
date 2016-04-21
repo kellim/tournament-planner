@@ -16,7 +16,7 @@ def deleteMatches():
     db = connect()
     cursor = db.cursor()
     query = "DELETE FROM match;"
-    cursor.execute(query);
+    cursor.execute(query)
     db.commit()
     db.close()
 
@@ -25,12 +25,19 @@ def deletePlayers():
     db = connect()
     cursor = db.cursor()
     query = "TRUNCATE player RESTART IDENTITY CASCADE;"
-    cursor.execute(query);
+    cursor.execute(query)
     db.commit()
     db.close()
 
 def countPlayers():
     """Returns the number of players currently registered."""
+    db = connect()
+    cursor = db.cursor()
+    query = "SELECT COUNT(*) FROM player;"
+    cursor.execute(query)
+    row = cursor.fetchone()
+    db.close()
+    return row[0]
 
 
 def registerPlayer(name):
