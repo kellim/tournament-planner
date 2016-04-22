@@ -32,3 +32,18 @@ FROM player
 LEFT JOIN match on player.id = match.winner
 GROUP BY player.id
 ORDER BY wins DESC;
+
+-- Create view with the player's ID, player's name, and number of losses.
+CREATE VIEW v_losses as
+SELECT player.id, player.name, COALESCE(COUNT(match.loser), 0) as losses
+FROM player
+LEFT JOIN match on player.id = match.loser
+GROUP BY player.id;
+
+-- Create view with the player's ID, player's name, number of wins, and number of matches.
+CREATE VIEW v_standings as
+SELECT player.id, player.name, v_wins.wins, v_losses.losses + v_wins.wins AS matches
+FROM player
+LEFT JOIN v_losses on player.id = v_losses.id
+LEFT JOIN v_wins on player.id = v_wins.id
+ORDER BY wins DESC;
