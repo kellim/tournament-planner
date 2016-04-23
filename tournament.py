@@ -91,7 +91,6 @@ def reportMatch(winner, loser):
     db = connect()
     cursor = db.cursor()
     query = "INSERT INTO match (winner, loser) VALUES (%s, %s)"
-    print(query)
     cursor.execute(query, (winner, loser))
     db.commit()
     db.close()
@@ -112,5 +111,9 @@ def swissPairings():
         id2: the second player's unique id
         name2: the second player's name
     """
-
-
+    standings = playerStandings()
+    length = len(standings)
+    pairings = []
+    for i in xrange(0, length, 2):
+        pairings.append((standings[i][0], standings[i][1], standings[i + 1][0], standings[i + 1][1]))
+    return pairings
