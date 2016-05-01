@@ -12,8 +12,6 @@ and `tournament_test.py`.
 
 
 ## Running the project
-
-- To run the project:
 - See https://www.udacity.com/wiki/ud197/install-vagrant for installing Vagrant and forking the [fullstack-nanodegree-vm respository](https://github.com/udacity/fullstack-nanodegree-vm).
 - Replace the contents of `/vagrant/tournament` with the files in this repo.
 - Run Vagrant according to the instructions at https://www.udacity.com/wiki/ud197/install-vagrant under "Run the virtual machine!"
