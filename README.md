@@ -2,14 +2,13 @@
 Python module that uses PostgreSQL to keep track of players and matches in a swiss system game tournament
 
 ## About the Project
-This is the second project for Udacity's Full Stack Nanodegree. There are three .py files - tournament.py, tournament.sql,
+This is a project for Udacity's Full Stack Nanodegree. There are three .py files - tournament.py, tournament.sql,
 and tournament_test.py. 
 - Udacity provided all code in tournament_test.py and skeleton code for tournament.py. 
 - tournament.sql is where the database, tables, and views will be created.
 
 
 ## Running the project
-Note: This project is currently a work in progress.
 
 - To run the project:
 - See https://www.udacity.com/wiki/ud197/install-vagrant for installing Vagrant and forking the [fullstack-nanodegree-vm respository](https://github.com/udacity/fullstack-nanodegree-vm).
